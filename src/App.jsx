@@ -6,6 +6,9 @@ import Layoute from './components/LayoutPage/LayoutePage';
 import Boards from './pages/Boards/Boards';
 import Posts from './pages/Posts/Posts';
 import VotersPosts from './pages/Posts/VotersPosts/VotersPosts';
+import TagsCard from './pages/Tags/TagsBoard/TagsCard/TagsCard';
+import DetailUsers from './pages/Users/DetailUser';
+import Users from './pages/Users/Users/Users';
 // WorkSpace
 import WorkSpaceMain from './pages/WorkSpace/WorkSpaceMain/WorkSpaceMain';
 import WorkSpace from './pages/WorkSpace/WorkSpace';
@@ -40,11 +43,15 @@ const App = () => {
     <>
       <Routes>
         <Route path='/' element={<Layoute />}>
-          <Route path='/' index element={<DashBoard />} />
+          <Route index path='/' element={<DashBoard />} />
           <Route path='/boards' element={<Boards />} />
           <Route path='/posts' element={<Posts />} />
           <Route path='/createPosts' element={<CreatePost />} />
           <Route path='/votersPosts' element={<VotersPosts />} />
+          <Route path='/tags' element={<TagsCard />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/detailUser' element={<DetailUsers />} />
+          <Route path='/' element={<Changelog />} />
         </Route>
         <Route path='/' element={<Client />}>
           <Route path='/mainClient' element={<MainClient />} />
