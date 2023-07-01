@@ -6,6 +6,12 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"]
   },
+  output: {
+    path: path.resolve(__dirname, "..", "docs/"),
+    filename: "scripts/bundle[hash].js",
+    clean: true,
+    publicPath: "/"
+  },
   cache: false,
   module: {
     rules: [
@@ -20,7 +26,7 @@ module.exports = {
       },
       {
         test: /\.(css|sass|scss)$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, path.resolve(__dirname, "../src/components/UI"), path.resolve(__dirname, "../src/components/Client/")],
         generator: {
           filename: "styles/[name][hash][ext]"
         },
@@ -35,10 +41,9 @@ module.exports = {
       },
       {
         test: /\.(css|sass|scss)$/,
-        exclude: /src/,
-        generator: {
-          filename: "styles/[name][hash][ext]"
-        },
+        include: [
+          path.resolve(__dirname, "../src/components/UI"), path.resolve(__dirname, "../src/components/Client/")
+        ],
         use: ["style-loader", {
           loader: "css-loader",
           options: {
