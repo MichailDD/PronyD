@@ -9,6 +9,8 @@ import VotersPosts from './pages/Posts/VotersPosts/VotersPosts';
 import TagsCard from './pages/Tags/TagsBoard/TagsCard/TagsCard';
 import DetailUsers from './pages/Users/DetailUser';
 import Users from './pages/Users/Users/Users';
+import Tags from './pages/Tags/Tags';
+import TagsBoard from './pages/Tags/TagsBoard/TagsBoard';
 // WorkSpace
 import WorkSpaceMain from './pages/WorkSpace/WorkSpaceMain/WorkSpaceMain';
 import WorkSpace from './pages/WorkSpace/WorkSpace';
@@ -52,6 +54,8 @@ const App = () => {
           <Route path='/users' element={<Users />} />
           <Route path='/detailUser' element={<DetailUsers />} />
           <Route path='/' element={<Changelog />} />
+          <Route path='/statuses' element={<TagsCard/>}/>
+          <Route path='/integrations' element={<Boards/>}/>
         </Route>
         <Route path='/' element={<Client />}>
           <Route path='/mainClient' element={<MainClient />} />
